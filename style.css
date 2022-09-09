@@ -65,6 +65,16 @@ body {
     font-size: 50px;
     padding: 5px;
     border: 5px solid #555;
+    min-width: 70px;
+    min-height: 70px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.mezclador p:hover{
+    background-color: #000;
+    color: #fff;
+    transition: .5s;
 }
 
 .numeros {

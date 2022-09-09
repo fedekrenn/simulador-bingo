@@ -6,6 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <!-- Poner favicon! -->
+    <link rel="shortcut icon" href="" type="image/x-icon">
     <title>Juego de bingo</title>
 </head>
 
@@ -16,7 +18,7 @@
             <div class="carton__numero-contenedor" id="playerBoard"></div>
         </div>
         <div class="mezclador">
-            <p>66</p>
+            <p id="numberDraw"></p>
         </div>
         <div class="carton">
             <h2>CPU</h2>
@@ -24,13 +26,8 @@
         </div>
     </section>
 
-    <section class="numeros">
-        <div class="numero-obtenido">66</div>
-        <div class="numero-obtenido">66</div>
-        <div class="numero-obtenido">66</div>
-        <div class="numero-obtenido">66</div>
-        <div class="numero-obtenido">66</div>
-        <div class="numero-obtenido">66</div>
+    <section class="numeros" id="totalNumbers">
+
     </section>
 
     <script src="./script.js"></script>
