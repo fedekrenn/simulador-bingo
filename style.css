@@ -69,6 +69,7 @@ body {
     min-height: 70px;
     text-align: center;
     cursor: pointer;
+    user-select: none;
 }
 
 .mezclador p:hover{
