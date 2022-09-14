@@ -2,9 +2,11 @@ const userboard = document.getElementById('playerBoard')
 const cpuBoard = document.getElementById('cpuBoard')
 const totalNumbers = document.getElementById('totalNumbers')
 const numberDraw = document.getElementById('numberDraw')
+const automaticBtn = document.getElementById('automatica')
 
 const userNumbers = fifteenRandomNumbers()
 const cpuNumbers = fifteenRandomNumbers()
+
 let userAcerts = 0
 let cpuAcerts = 0
 
@@ -24,8 +26,14 @@ for (let i = 0; i < cpuNumbers.length; i++) {
 
 
 numberDraw.addEventListener('click', randomNumberDraw)
-randomNumberDraw()
 
+automaticBtn.addEventListener('click', () => {
+    alert('Automatico activado!')
+    automaticBtn.style.display = 'none'
+    const div = document.getElementsByClassName('jugada-automatica')
+    div[0].style.height = '10vh'
+    automaticInterval = setInterval(randomNumberDraw, 300)
+})
 
 
 function randomNumberDraw() {
@@ -57,11 +65,13 @@ function randomNumberDraw() {
 
 function checkWinner() {
     if (userAcerts === 15) {
-        alert('Ganaste!')
         document.getElementById('numberDraw').style.display = 'none'
+        alert(`Ganaste!, quedaron en el bolillero ${balls.length} bolas`)
+        clearInterval(automaticInterval)
     } else if (cpuAcerts === 15) {
-        alert('Perdiste, la ganadora es la CPU!')
         document.getElementById('numberDraw').style.display = 'none'
+        alert(`Perdiste, la ganadora es la CPU! Quedaron en el bolillero ${balls.length} bolas`)
+        clearInterval(automaticInterval)
     }
 }
 

@@ -81,7 +81,7 @@ body {
 .numeros {
     display: flex;
     flex-wrap: wrap;
-    margin: 4em 2em .7em 2em;
+    margin: 0 2em .7em 2em;
     border: 2px solid #fff;
     padding: 10px;
     min-height: 250px;
@@ -99,4 +99,24 @@ body {
     font-size: 20px;
     font-weight: bold;
     border-radius: 5px;
+}
+
+.jugada-automatica{
+    height: 25vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.automatica{
+    display: block;
+    padding: 20px;
+    border: 2px solid #fff;
+    border-radius: 5px;
+    background-color: #fff;
+    color: #000;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+
 }
