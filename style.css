@@ -102,14 +102,14 @@ body {
 }
 
 .jugada-automatica{
-    height: 25vh;
+    min-height: 25vh;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
 }
 
-.automatica{
-    display: block;
+.aut-btn{
     padding: 20px;
     border: 2px solid #fff;
     border-radius: 5px;
@@ -118,5 +118,8 @@ body {
     font-size: 20px;
     font-weight: bold;
     cursor: pointer;
+}
 
+.hidden{
+    display: none;
 }
