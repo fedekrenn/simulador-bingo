@@ -81,6 +81,7 @@ body {
 .numeros {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     margin: 0 2em .7em 2em;
     border: 2px solid #fff;
     padding: 10px;
@@ -122,4 +123,36 @@ body {
 
 .hidden{
     display: none;
+}
+
+.score p {
+    color: #000;
+    font-size: 20px;
+    font-weight: bold;
+    margin: 1em auto;
+    background-color: rgb(184, 170, 170);
+    display: block;
+    padding: 10px;
+    width: 400px;
+    text-align: center;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 970px) {
+    .competidores {
+        flex-direction: column;
+    }
+
+    .mezclador{
+        order: -1;
+    }
+
+    .competidores > *{
+        margin: 1em;
+    }
+
+    .score p{
+        width: 40%;
+    }
 }

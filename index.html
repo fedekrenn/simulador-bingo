@@ -11,6 +11,9 @@
 </head>
 
 <body>
+    <section class="score">
+        <p title="Mientras más bolas queden en el bolillero cuando ganas, significa que lograste una win en menos intentos, eso determina tu puntaje">Puntaje máximo <span id="score">0</span> puntos</p>
+    </section>
     <section class="competidores">
         <div class="carton">
             <h2>Player</h2>
@@ -25,7 +28,7 @@
         </div>
     </section>
 
-    <section class="jugada-automatica">
+    <section class="jugada-automatica" id="autoPlay">
         <button class="aut-btn" id="automatica">Jugada Automática</button>
         <button class="aut-btn hidden" id="stopAutomatica">Parar</button>
     </section>

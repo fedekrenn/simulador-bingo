@@ -4,9 +4,14 @@ const totalNumbers = document.getElementById('totalNumbers')
 const numberDraw = document.getElementById('numberDraw')
 const automaticBtn = document.getElementById('automatica')
 const stopAutomatic = document.getElementById('stopAutomatica')
+const scoreSpan = document.getElementById('score')
+
+const maxScore = localStorage.getItem('maxScore') || 0
+scoreSpan.innerText = maxScore
 
 const userNumbers = fifteenRandomNumbers()
 const cpuNumbers = fifteenRandomNumbers()
+
 
 let userAcerts = 0
 let cpuAcerts = 0
@@ -24,7 +29,6 @@ for (let i = 0; i < userNumbers.length; i++) {
 for (let i = 0; i < cpuNumbers.length; i++) {
     cpuBoard.innerHTML += `<div class="numero-contenedor__child" id='cpuNum${i}'>${cpuNumbers[i]}</div>`
 }
-
 
 
 
@@ -81,12 +85,17 @@ function checkWinner() {
         alert(`Ganaste!, quedaron en el bolillero ${balls.length} bolas`)
         clearInterval(automaticInterval)
         stopAutomatic.classList.toggle('hidden')
-
+        document.querySelector('.jugada-automatica').style.minHeight = '30px'
+        if (balls.length > maxScore) {
+            localStorage.setItem('maxScore', balls.length)
+            scoreSpan.innerText = balls.length
+        }
     } else if (cpuAcerts === 15) {
         document.getElementById('numberDraw').style.display = 'none'
         alert(`Perdiste, la ganadora es la CPU! Quedaron en el bolillero ${balls.length} bolas`)
         clearInterval(automaticInterval)
         stopAutomatic.classList.toggle('hidden')
+        document.querySelector('.jugada-automatica').style.minHeight = '30px'
     }
 }
 
